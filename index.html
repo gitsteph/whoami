@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>stephanie andrews is!</title>
+        <meta charset="utf-8"/>
+        <script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js" integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+" crossorigin="anonymous"></script>
+        <style>
+            body {
+                color: #333;
+                font-family: Arial, Helvetica, sans-serif;
+                overflow-x: hidden;
+            }
+            h2, h3 {
+                display: inline;
+            }
+            tr {
+                display: table-row;
+            }
+            td {
+                display: table-cell;
+                vertical-align:top;
+                padding: 20px;
+            }
+            .fuschia {
+                color: #E42D9F;
+            }
+            .neonBlue {
+                color: #33E8DD;
+            }
+            .neonPurple {
+                color: #B400FF;
+            }
+            .neonOrange {
+                color: #FF9E16;
+            }
+            .neonPink {
+                color: magenta;
+            }
+            .neonGreen {
+                color: #C7FF32;
+            }
+
+            /*Credit for this "Typewriter" style: CSS-Tricks*/
+            .typewrite {
+              color: magenta;
+              overflow: hidden; /* Ensures the content is not revealed until the animation */
+              white-space: nowrap; /* Keeps the content on a single line */
+              margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+              animation: 
+                typing 3.5s steps(30, end),
+                blink-caret .5s step-end infinite;
+            } 
+        </style>
+    </head>
+
+    <body>
+        <!-- Credit for this "Typewriter" script: CSS-Tricks -->
+        <script type="text/javascript">
+            var TxtType = function(el, toRotate, period) {
+                this.toRotate = toRotate;
+                this.el = el;
+                this.loopNum = 0;
+                this.period = parseInt(period, 10) || 2000;
+                this.txt = '';
+                this.tick();
+                this.isDeleting = false;
+            };
+
+            TxtType.prototype.tick = function() {
+                var i = this.loopNum % this.toRotate.length;
+                var fullTxt = this.toRotate[i];
+
+                if (this.isDeleting) {
+                    this.txt = fullTxt.substring(0, this.txt.length - 1);
+                } else {
+                    this.txt = fullTxt.substring(0, this.txt.length + 1);
+                }
+
+                this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
+
+                var that = this;
+                var delta = 200 - Math.random() * 100;
+
+                if (this.isDeleting) { delta /= 2; }
+
+                if (!this.isDeleting && this.txt === fullTxt) {
+                    delta = this.period;
+                    this.isDeleting = true;
+                } else if (this.isDeleting && this.txt === '') {
+                    this.isDeleting = false;
+                    this.loopNum++;
+                    delta = 500;
+                }
+
+                setTimeout(function() {
+                    that.tick();
+                }, delta);
+            };
+
+            window.onload = function() {
+                var elements = document.getElementsByClassName('typewrite');
+                for (var i=0; i<elements.length; i++) {
+                    var toRotate = elements[i].getAttribute('data-type');
+                    var period = elements[i].getAttribute('data-period');
+                    if (toRotate) {
+                      new TxtType(elements[i], JSON.parse(toRotate), period);
+                    }
+                }
+                // INJECT CSS
+                var css = document.createElement("style");
+                css.type = "text/css";
+                css.innerHTML = ".typewrite > .wrap { border-right: 0.15em solid lightGray}";
+                document.body.appendChild(css);
+            };
+        </script>
+
+        <div>
+            <h1 class="neonPink">Stephanie Andrews</h1>
+            <h2 class="neonOrange">>> </h2><h2 class="neonBlue">alias</h2>
+            <br>
+            &nbsp;&nbsp;<h2 class="neonPink">@stepha</h2>
+            <br>
+            <h2 class="neonOrange">>> </h2><h2 class="neonBlue">pwd</h2>
+            <br>
+            &nbsp;&nbsp;<h2 class="neonPink">/UnitedStates/California/SanFrancisco&&LosAngeles</h2>
+            <br>
+            <h2 class="neonOrange">>> </h2><h2 class="neonBlue">whoami</h2>
+            <br>
+            &nbsp;&nbsp;<h2 class="typewrite" data-period="1400" data-type='["software engineer", "indie game developer", "happy hardcore musician/artist"]'></h2>
+            <br>
+        </div>
+        <br>
+        <div>
+            <h2 class="neonOrange">A Few Semi-Random Lists:</h2>
+        </div>
+        <br>
+        <div>
+            <h3 class="neonBlue">Things I like/think are awesome:</h3>
+            <ul>
+                <li>Furry creatures</li>
+                <li>MCT oil</li>
+                <li>Citizen science</li>
+                <li>Participatory action research</li>
+                <li>SuperCollider</li>
+                <li>Getting better at things in a measurable way</li>
+                <li>Containers</li>
+                <li>Lists of things</li>
+                <li>Fringe (TV series)</li>
+                <li>The weird edge of the internet</li>
+            </ul>
+            <h3 class=neonBlue>Things I hope to learn more about (in 2018):</h3>
+            <ul>
+                <li>Procedural content generation</li>
+                <li>Circuit bending</li>
+                <li>Algorithms to live by</li>
+                <li>Functional programming</li>
+                <li>Emerging technologies and new media</li>
+                <li>Biohacking</li>
+                <li>Electrical engineering</li>
+                <li>Game development</li>
+                <li>Mindfulness</li>
+            </ul>
+            <h3 class=neonBlue>Things I find important/meaningful:</h3>
+            <ul>
+                <li>Giving back</li>
+                <li>The Greater Good™</li> 
+                <li>Introspection (and reflection)</li>
+                <li>Social equity</li>
+            </ul>
+        </div>
+        <div>
+<!--        <h2>Some other random widgety things:</h2>
+ -->        <p>
+<!--        <canvas to draw/export/send an image>
+            <tool to create/export/send a simple tune>
+            <tool to record/export/send a vm> -->
+            </p>
+        </div>
+
+        <div id="thanksForVisitingBlock">
+            <table>
+                <tr>
+                    <td>
+                        <img src="me.jpg" alt="me, circa 2018" style="width:200px;">
+                    </td>
+                    <td>
+                        <h2 class="neonPink">Thanks for visiting!</h2>
+                        <p>┬┴┬┴┤(･_├┬┴┬┴</p>
+                        <div>
+                            <h2 class="neonPink">Connect with me?</h2>
+                            <table>
+                                <tr>
+                                    <td>
+                                        <a href="https://www.linkedin.com/in/stephlinked/"><i class="fab fa-linkedin fa-3x" style="color:orange"></i></a>
+                                    </td>
+                                    <td>
+                                        <a href="https://twitter.com/byronic_string"><i class="fab fa-twitter fa-3x" style="color:orange"></i></a>
+                                    </td>
+                                    <td>
+                                        <a href="https://itch.io/profile/stepha"><i class="fas fa-gamepad fa-3x" style="color:orange"></i></a>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+    </body>
+</html>
